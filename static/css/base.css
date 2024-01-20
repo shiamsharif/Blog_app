@@ -1,0 +1,61 @@
+body {
+    font-family: 'Zilla Slab', serif;;
+    margin: 50px;
+    font-size: 18px;
+}
+
+header {
+    border-bottom: 1px solid #999;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+header h1 a {
+    text-align: center;
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 5px
+}
+
+p {
+    letter-spacing: 1px;
+    padding-bottom: 35px;
+}
+
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    display: flex;
+    padding-top: 2rem;
+}
+
+.post-entry {
+    margin-bottom: 2rem;
+}
+
+.post-entry h2 {
+    margin: 0.5rem 0;
+}
+
+.post-entry h2 a,
+post-entry h2 a:visited {
+    color: blue;
+}
+
+.post-entry p {
+    margin: 0;
+    font-weight: 400;
+}
+
+.post-entry h2 a:hover {
+    color:firebrick;
+}
+
+
