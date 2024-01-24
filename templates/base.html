@@ -18,7 +18,14 @@
                 <div class="nav-right">
                     <a href="{% url 'post_new' %}">+ New Blog Post</a>
                 </div>
-            </header>  
+            </header> 
+            
+            {% if user.is_authenticated %}
+                <p>Hi {{ user.username }}</p>
+            {% else %}
+            <p>You are not logged in.</p>
+            <a href="{% url "login" %}">Log In</a>
+            {% endif %}
             
         
             {% block content %}
