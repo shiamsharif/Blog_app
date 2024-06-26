@@ -1,40 +1,38 @@
 {% load static %}
 <html>
-    <head>
-        <title>Vampire's Blog</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600&display=swap" rel="stylesheet">
-
-        <link href = "{% static 'css/base.css' %}" rel ="stylesheet">
-    </head>
-    <body>
-        <div>
-            <header>
-                <div class="nav-left">
-                    <h1><a href="{% url 'home' %}">Vampire's Blog</a></h1>
-                </div>
-
-                <div class="nav-right">
-                    <a href="{% url 'post_new' %}">+ New Blog Post</a>
-                </div>
-            </header> 
-            
-            
-            {% if user.is_authenticated %}
-                <p>Hi {{ user.username }}</p>
-                <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Log Out</button>
-                </form>
-            {% else %}
-                <p>You are not logged in.</p>
-                <a href="{% url 'login' %}">Log In</a>
-            {% endif %}
-            
-        
-            {% block content %}
-            {% endblock content%}
+  <head>
+    <title>Eta Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    {% comment %} CSS link {% endcomment %}
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <header>
+        <div class="nav-left">
+          <h1><a href="{% url 'home' %}">Eta Blog</a></h1>
         </div>
-    </body>
+
+        <div class="nav-right">
+          <a href="{% url 'post_new' %}">+ New Blog Post</a>
+        </div>
+      </header>
+
+      {% if user.is_authenticated %}
+      <p>Hi {{ user.username }}</p>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+      </form>
+      {% else %}
+      <p>You are not logged in.</p>
+      <a href="{% url 'login' %}">Log In</a>
+      {% endif %} {% block content %} {% endblock content%}
+    </div>
+  </body>
 </html>

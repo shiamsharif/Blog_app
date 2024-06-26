@@ -1,4 +1,6 @@
 from django.views.generic import ListView, DetailView #new
+# ListView: Lists all the blog posts.
+# DetailView: Shows the details of a single blog post.
 from django.views.generic.edit import CreateView, UpdateView, DeleteView #newww
 from django.urls import reverse_lazy
 
